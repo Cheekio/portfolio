@@ -1,0 +1,17 @@
+####################################
+#                                  #
+#  portfolio                       #
+#    - a simple portfolio project  #
+#                                  #
+####################################
+
+This code is for the purpose of
+showing off my mad django chops.
+Mad django chops not included.
+
+###-- Revision 0: Albert the Actuary --###
+*Set up django, local repo, req.txt, etc
+*Began class based index view
+*Realized I don't need django for this
+*This code doesn't even work yet
+
