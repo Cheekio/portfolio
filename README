@@ -9,6 +9,14 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.2: Camilla the Chicken --###
+*Added Bootstrap & HTML5 Boilerplate
+*Added Generic Views for BlogPosts
+ -List
+ -Create
+ -Update
+ -Delete
+
 ###-- Revision 0.1c: Burt the Builder --###
 *Added laptop pub keys to heroku
 

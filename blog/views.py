@@ -1,13 +1,26 @@
 # Create your views here.
-from django.views.generic import ListView, FormView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from blog.models import BlogPost, BlogPostForm
 
 class IndexBlog(ListView):
 	template_name = 'blog/index.html'
-	#context_object_name = 'bposts'
 	model = BlogPost
 
-class NewBlog(FormView):
-	template_name = 'blog/new.html'
-	form_class = BlogPostForm
+class DetailBlog(DetailView):
+	template_name = 'blog/detail.html'
+	model = BlogPost
+
+class CreateBlog(CreateView):
+	template_name = 'blog/create.html'
+	model = BlogPost
+	success_url = '/'
+
+class UpdateBlog(UpdateView):
+	template_name = 'blog/update.html'
+	model = BlogPost
+	success_url = '/'
+
+class DeleteBlog(DeleteView):
+	model = BlogPost
 	success_url = '/'

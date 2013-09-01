@@ -1,19 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}
-Index
+Blog Index
 {% endblock title %}
-{% block heading %}
-Index
-{% endblock heading %}
-
-
-{% block body %}
-{{blogpost_list}}
-{% if bposts %}
-{% for post in bposts %}
-stuff
+{% block left %}
+{% for post in object_list %}
+<h2>{{post.title}}</h2>
+            {{post.body}}
+            <p><a class="btn btn-default" href="#">Read More &raquo;</a></p>
 {% endfor %}
-{% else %}
-no bposts
-{% endif %}
-{% endblock body %}
+{% endblock %}
