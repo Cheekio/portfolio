@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Index
+{% endblock title %}
+{% block heading %}
+Index
+{% endblock heading %}
+
+
+{% block body %}
+{{blogpost_list}}
+{% if bposts %}
+{% for post in bposts %}
+stuff
+{% endfor %}
+{% else %}
+no bposts
+{% endif %}
+{% endblock body %}

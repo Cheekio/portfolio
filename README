@@ -9,6 +9,14 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.1: Burt the Builder --###
+*Actually works! Kind of.
+*Server runs, some heroku settings in place
+*New Posts / admin in working order
+*base.html in place, works
+*only uses class based views
+
+
 ###-- Revision 0: Albert the Actuary --###
 *Set up django, local repo, req.txt, etc
 *Began class based index view

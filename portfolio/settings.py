@@ -1,5 +1,6 @@
 # Django settings for portfolio project.
 
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -8,18 +9,23 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+try:
+    import development
+    production = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': development.dbname,                      # Or path to database file if using sqlite3.
+            # The following settings are not used with sqlite3:
+            'USER': development.dbuser,
+            'PASSWORD': development.dbpw,
+            'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+            'PORT': '',                      # Set to empty string for default.
+        }
     }
-}
+except:
+    production = True
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -107,12 +113,21 @@ ROOT_URLCONF = 'portfolio.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-TEMPLATE_DIRS = (
-    '/home/gregor/Documents/django/portfolio/templates',
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+
+try:
+    import development
+    TEMPLATE_DIRS = (
+        development.templatedir,
+        )
+
+except:
+    PROJECT_DIR = os.path.dirname(__file__)
+    TEMPLATE_DIRS = (
+        os.path.join(PROJECT_DIR, 'templates'),
+        # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+        # Always use forward slashes, even on Windows.
+        # Don't forget to use absolute paths, not relative paths.
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -121,6 +136,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'blog',
+
+
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -155,3 +174,28 @@ LOGGING = {
         },
     }
 }
+try:
+    import development
+except:
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
+
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # Allow all host headers
+    ALLOWED_HOSTS = ['*']
+
+    # Static asset configuration
+    #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    #STATIC_URL = '/static/'
+
+    #STATICFILES_DIRS = (
+    #    os.path.join(BASE_DIR, '../static/'),
+    #)
+
+STATICFILES_DIRS = (
+    #"static/",
+    os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'static')),
+    )

@@ -4,5 +4,6 @@ from blog import views
 
 
 urlpatterns = patterns('',
-	url(r'^$', views.index, name='index'),
+	url(r'^$', views.IndexBlog.as_view(), name='index'),
+	url(r'^new/$', views.NewBlog.as_view(), name='new'),
 	)
