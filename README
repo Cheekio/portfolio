@@ -9,6 +9,10 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.1a: Burt the Builder --###
+*Pushed to Heroku
+ -(may span multiple commits!)
+
 ###-- Revision 0.1: Burt the Builder --###
 *Actually works! Kind of.
 *Server runs, some heroku settings in place
