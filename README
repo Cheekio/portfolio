@@ -9,6 +9,9 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.2a: Camilla the Chicken --###
+*played with appearance, wip
+
 ###-- Revision 0.2: Camilla the Chicken --###
 *Added Bootstrap & HTML5 Boilerplate
 *Added Generic Views for BlogPosts

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block left %}
-{{object.title}}|||
-{{context.title}}
+<h2><a href="{% url 'blog:detail' object.id %}">{{object.title}}</a></h2>
+            {{object.body|linebreaks}}
 
 {% endblock left %}

@@ -4,8 +4,8 @@ Blog Index
 {% endblock title %}
 {% block left %}
 {% for post in object_list %}
-<h2>{{post.title}}</h2>
-            {{post.body}}
+<h2><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a></h2>
+            {{post.body|linebreaks}}
             <p><a class="btn btn-default" href="#">Read More &raquo;</a></p>
 {% endfor %}
 {% endblock %}
