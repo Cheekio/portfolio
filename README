@@ -9,6 +9,12 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.1c: Burt the Builder --###
+*Added laptop pub keys to heroku
+
+###-- Revision 0.1b: Burt the Builder --###
+*changed DB settings for the better
+
 ###-- Revision 0.1a: Burt the Builder --###
 *Pushed to Heroku
  -(may span multiple commits!)
