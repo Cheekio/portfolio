@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load comments %}
 {% block title %}
 Blog Index
 {% endblock title %}
@@ -7,7 +6,6 @@ Blog Index
 {% for post in object_list %}
 <h2><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a></h2>
             {{post.body|safe}}
-            {% get_comment_count for post as comment_count %}.
             <p><a class="btn btn-default" href="#">Read More &raquo;</a></p>
 
 {% endfor %}
