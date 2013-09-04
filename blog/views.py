@@ -2,6 +2,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from blog.models import BlogPost, BlogPostForm
+from django.http import HttpRequest
 
 class IndexBlog(ListView):
 	template_name = 'blog/index.html'

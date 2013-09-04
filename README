@@ -9,6 +9,10 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.3: Dr Bunsen Honeydew the Devious --###
+*Added a nicer sidebar
+*wrote some functional tests with varying degrees of pragmatism
+
 ###-- Revision 0.2a: Camilla the Chicken --###
 *played with appearance, wip
 
