@@ -1,7 +1,11 @@
 # Django settings for portfolio project.
 
 import os
-DEBUG = True
+try:
+    import development
+    DEBUG = True
+except:
+    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -149,6 +153,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'blog',
+    'registration',
     'django.contrib.comments',
 
     # Uncomment the next line to enable the admin:

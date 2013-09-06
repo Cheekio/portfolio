@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% block title %}Activation complete{% endblock %}
+
+{% block content %}
+<h1>Congratulations!</h1>
+<p>Your registration is now complete! redirecting to the home page...</p>
+<script type="text/JavaScript">
+<!--
+setTimeout("location.href = '/';",1500);
+-->
+</script>
+{% endblock %}

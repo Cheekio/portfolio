@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'portfolio.views.home', name='home'),
     url(r'^', include('blog.urls', namespace='blog')),
 
+    (r'^accounts/', include('registration.backends.default.urls')),
+
     url(r'^comments/', include('django.contrib.comments.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

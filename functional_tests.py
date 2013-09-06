@@ -10,12 +10,21 @@ class HomePageTest(unittest.TestCase):
 	def tearDown(self):
 		self.browser.quit()
 
-	def test_frontpage(self):
+	def test_index(self):
 		self.browser.get('http://localhost:8000/')
-		#from IPython import embed
-		#embed()
-		title = self.browser.content
-		self.assertEqual(title, True)
+		title = self.browser.title
+		for i in dir(self.browser.title):
+			print i
+		self.assertIn('Index', title)
+
+	def test_login(self):
+		self.browser.get('http://localhost:8000/')
+		try:
+			login = self.browser.find_element_by_name('username')
+			password = self.browser.find_element_by_name('password')
+		except:
+			self.fail()
+		self.assertEqual(True,False)
 
 if __name__ == '__main__':
 		unittest.main()

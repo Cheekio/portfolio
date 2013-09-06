@@ -9,6 +9,11 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.4: Eddy the Fast (cheating, i know --###
+*added basic django-registration functionality
+*because someone's actively vandalizing my site!
+*Also fixed the post order. Bonehead mistake, that.
+
 ###-- Revision 0.3: Dr Bunsen Honeydew the Devious --###
 *Added a nicer sidebar
 *wrote some functional tests with varying degrees of pragmatism
