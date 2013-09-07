@@ -4,9 +4,9 @@ Blog Index
 {% endblock title %}
 {% block left %}
 {% for post in object_list %}
-<h2><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a></h2>
-            {{post.body|safe}}
-            <p><a class="btn btn-default" href="#">Read More &raquo;</a></p>
+<h2><a href="{% url 'blog:read' post.id %}">{{post.title}}</a></h2>
+            <div class="post-body">{{post.body|safe}}</a></div>
+            <p><a class="btn btn-default" href="{% url 'blog:read' post.id %}">Read More &raquo;</a></p>
 
 {% endfor %}
 {% endblock %}

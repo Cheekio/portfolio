@@ -9,6 +9,11 @@ This code is for the purpose of
 showing off my mad django chops.
 Mad django chops not included.
 
+###-- Revision 0.5: Fozzie The Funny --###
+*Added real auth setup
+*added delete templates
+*renamed to match CRUD standards
+
 ###-- Revision 0.4: Eddy the Fast (cheating, i know --###
 *added basic django-registration functionality
 *because someone's actively vandalizing my site!

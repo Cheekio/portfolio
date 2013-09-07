@@ -11,13 +11,13 @@ class IndexBlog(ListView):
 	template_name = 'blog/index.html'
 	queryset = BlogPost.objects.all().order_by('-created')
 
-class DetailBlog(DetailView):
-	template_name = 'blog/detail.html'
+class ReadBlog(DetailView):
+	template_name = 'blog/read.html'
 	model = BlogPost
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
-		return super(DetailBlog, self).dispatch(*args, **kwargs)
+		return super(ReadBlog, self).dispatch(*args, **kwargs)
 
 class CreateBlog(CreateView):
 	template_name = 'blog/create.html'
@@ -39,6 +39,7 @@ class UpdateBlog(UpdateView):
 
 class DeleteBlog(DeleteView):
 	model = BlogPost
+	template_name = 'blog/delete.html'
 	success_url = '/'
 
 	@method_decorator(login_required)
