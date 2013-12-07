@@ -1,8 +1,7 @@
 # Create your views here.
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from blog.models import BlogPost, BlogPostForm
-from django.http import HttpRequest
+from blog.models import BlogPost
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -15,7 +14,6 @@ class ReadBlog(DetailView):
 	template_name = 'blog/read.html'
 	model = BlogPost
 
-	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(ReadBlog, self).dispatch(*args, **kwargs)
 
