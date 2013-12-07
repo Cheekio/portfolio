@@ -4,7 +4,7 @@ import os
 try:
     import development
     DEBUG = True
-except:
+except ImportError:
     DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
@@ -13,9 +13,7 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-try:
-    import development
-    production = False
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -27,8 +25,7 @@ try:
             'PORT': '',                      # Set to empty string for default.
         }
     }
-except:
-    production = True
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -104,7 +101,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 's&jm4)r%oa9d0-9we)fa37qw&g!6-jne8jrebtpf*4mla2z82!'
+SECRET_KEY = 's&jm4)65489d0-9we)9877qw&g!6-jne8jrebtpf*4mla2z82!'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -129,13 +126,12 @@ ROOT_URLCONF = 'portfolio.urls'
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
-try:
-    import development
+if DEBUG:
     TEMPLATE_DIRS = (
         development.templatedir,
         )
 
-except:
+else:
     PROJECT_DIR = os.path.dirname(__file__)
     TEMPLATE_DIRS = (
         os.path.join(PROJECT_DIR, 'templates'),
@@ -190,9 +186,7 @@ LOGGING = {
         },
     }
 }
-try:
-    import development
-except:
+if not DEBUG:
     import dj_database_url
     DATABASES['default'] =  dj_database_url.config()
 
@@ -203,9 +197,7 @@ except:
     ALLOWED_HOSTS = ['*']
 
     # Static asset configuration
-    #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = 'staticfiles'
-    #STATIC_URL = '/static/'
 
     #STATICFILES_DIRS = (
     #    os.path.join(BASE_DIR, '../static/'),
