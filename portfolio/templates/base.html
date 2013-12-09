@@ -5,7 +5,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
+  <head>
    <!--#-#-#-#-#-#-#-#-#-#-#-#-#-#-  LOL SO 1990  -#-#-#-#-#-#-#-#-#-#-#-#-#-#
    * - #                                                                     #
    * - #   Sup dudes. Welcome to                                             #
@@ -26,24 +26,29 @@
    * - #                                                                     #
    * - #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-# -->
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% block title %}{% endblock %}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        <!--link rel="stylesheet" href="css/bootstrap-theme.min.css"-->
-        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
-        <link rel="stylesheet" href="{% static '/static/css/bootstrap-theme.min.css' %}">
-        <script src="{% static '/static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
-    </head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/static/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static '/static/css/shCore.css' %}">
+    <link rel="stylesheet" href="{% static '/static/css/shThemeDefault.css' %}">
+    <script src="{% static '/static/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46306623-1', 'clifford.io');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -63,7 +68,7 @@
             <p>The blog of an aspiring technologist.</p>
             <!--p><a class="btn btn-primary btn-lg" href="make-an-about-page">Learn more &raquo;</a></p-->
           </div>
-          <div class="col-md-6 info well">
+          <div class="col-md-6 info">
             <p>I'm a <b>web developer.</b></p>
             <p>I'm the <b>lead developer</b> behind <a href="http://vermontgleaningcollective.org">The Gleaners Interface</a>.</p>
             <p>I got my start in web development making fast <a href="http://woodstockjobbank.org/">Wordpress</a> <a href="http://bethelfoodshelf.org">Spinups</a> <a href="http://kmria.org">for</a> <a href="http://ocpvt.org">non-profits</a>.</p>
@@ -106,6 +111,10 @@
       {% endblock body %}
     </div> <!-- /container -->
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+            <script src="{% static 'js/shCore.js' %}"></script>
+            <script src="{% static 'js/shAutoloader.js' %}"></script>
+            <script src="{% static 'js/shBrushPython.js' %}"></script>
+
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
@@ -115,12 +124,8 @@
 
         <script src="{% static '/static/js/plugins.js' %}"></script>
         <script src="{% static '/static/js/main.js' %}"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+        <script type="text/javascript">
+          SyntaxHighlighter.all();
         </script>
     </body>
 </html>
