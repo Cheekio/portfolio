@@ -43,3 +43,7 @@ body{
     list-style:none;
     padding: 0;
 }
+.blog {
+  max-width:800px;
+  margin:0 auto;
+}
